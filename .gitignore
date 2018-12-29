@@ -1,0 +1,19 @@
+.metadata/
+.recommenders/
+.settings/
+target/
+RemoteSystemsTempFiles/
+Servers/
+.properties
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.springBeans
+deployment
+tempbar
+tempclasses
+bin
+deposit
