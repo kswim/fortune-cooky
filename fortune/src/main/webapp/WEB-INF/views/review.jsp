@@ -6,12 +6,8 @@
 </head>
 <body>
 <h1>
-	Hello fortune cookies!  
+	감사합니다.  
 </h1>
-	<form action="/fortune/submit" method="post">
-		<br>포춘쿠키를 확인하세요!<br>
-		이름 : <input type="text" name="name" ><br>
-		<input type="submit" value="확인" >
-	</form>
+
 </body>
 </html>

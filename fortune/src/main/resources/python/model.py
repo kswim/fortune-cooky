@@ -1,6 +1,6 @@
 import sys
 
-a = int(sys.argv[1])
-b = int(sys.argv[2])
+name = sys.argv[1]
+
         
-print(a+b)
+print(name+ "님의 fortune cookie!")
