@@ -6,12 +6,10 @@
 </head>
 <body>
 <h1>
-	Hello fortune cookies!  
+	[administrator]  
 </h1>
-	<form action="/fortune/fortune" method="post">
-		<br>포춘쿠키를 확인하세요! <br>
-		이름 : <input type="text" name="name" ><br>
-		<input type="submit" value="확인" >
-	</form>
+	<br>관리자로 접속되었습니다.<br><br>
+	<a href="${cp}/fortune/">FORTUNE MAIN</a> &nbsp;&nbsp;
+	<a href="${cp}/fortune/admin/">DATABASE MANAGE</a> &nbsp;&nbsp;
 </body>
 </html>

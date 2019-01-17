@@ -15,14 +15,37 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
+	<!-- properties 파일을 가져올 수 있도록  태그를 추가 -->
+	<context:property-placeholder location="/WEB-INF/*.properties" /> 
+
+	<!-- 커넥션풀 생성 -->
+  	<beans:bean id="dataSource"
+        class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <beans:property name="driverClass" value="${jdbc.driver}" />
+        <beans:property name="jdbcUrl" value="${jdbc.url}" />
+        <beans:property name="user" value="${jdbc.username}" />
+        <beans:property name="password" value="${jdbc.password}" />
+	 	<beans:property name="maxPoolSize" value="200" />
+        <beans:property name="checkoutTimeout" value="60000" />
+        <beans:property name="maxIdleTime" value="1800" />
+        <beans:property name="idleConnectionTestPeriod" value="600" />
+	</beans:bean>
+
+
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<interceptors>
+		<interceptor>
+			<mapping path="/admin/logout"/>
+			<beans:bean class="com.fc.fortune.admin.AdminInterceptor"></beans:bean>
+		</interceptor>
+	</interceptors>
+	
 	<context:component-scan base-package="com.fc.fortune" />
 	
-	
-	
+
 </beans:beans>

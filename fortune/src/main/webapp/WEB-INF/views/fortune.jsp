@@ -6,10 +6,10 @@
 </head>
 <body>
 <h1>
-	Hello fortune cookies!  
+	Hello fortune cookies!
 </h1>
 
-	<P> ${result} </P>
+	<P> ${result} 님의 운세는 다음과 같습니다. </P>
 
 	<form action="/fortune/review" method="post">
 		<br>리뷰 남기기<br>
